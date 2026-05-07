@@ -1,9 +1,0 @@
-El nombre no puede estar vacío
-Edad inválida
-Correo inválido
-El tiempo debe ser mayor que cero
-El nombre no puede estar vacío
-Edad inválida
-Correo inválido
-El tiempo debe ser mayor que cero
-El nombre no puede estar vacío
