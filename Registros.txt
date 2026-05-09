@@ -1,12 +1,24 @@
+# =========================================================
+# Sistema de Gestión de Clientes y Reservas
+# Fase 4 - Componente práctico - Prácticas simuladas
+# Autor: Keimer Manuel Sanchez Gutierrez
+# =========================================================
+
+# Importamos el módulo datetime para manejar fechas y horas
 from datetime import datetime
 
+# Definimos la clase Registros para manejar el registro de mensajes
 class Registros:
 
+    # Método estático para guardar un mensaje en el archivo de logs
     @staticmethod
     def guardar(mensaje):
 
+        # Abrimos el archivo logs.txt en modo append (agregar) con codificación UTF-8
         with open("logs.txt", "a", encoding="utf-8") as archivo:
 
+            # Obtenemos la fecha y hora actual en formato YYYY-MM-DD HH:MM:SS
             fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
+            # Escribimos la fecha seguida del mensaje en el archivo
             archivo.write(f"{fecha} -> {mensaje}\n")
