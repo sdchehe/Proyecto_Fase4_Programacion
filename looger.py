@@ -10,20 +10,39 @@
 # - Controlar acciones y procesos del sistema
 # - Apoyar el manejo de errores y excepciones
 # ==========================================================
-
-from datetime import datetime
-
-
 class Logger:
 
-    # Método para registrar mensajes en el archivo logs.txt
     def log(self, mensaje):
 
-        # Abrir el archivo en modo agregar
-        with open("logs.txt", "a", encoding="utf-8") as archivo:
+        try:
 
-            # Obtener fecha y hora actual
-            fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            archivo = open(
+                "log.txt",
+                "a"
+            )
 
-            # Guardar mensaje con fecha y hora
-            archivo.write(f"{fecha} - {mensaje}\n")
+            archivo.write(
+                mensaje + "\n"
+            )
+
+            archivo.close()
+
+            print(
+                "Mensaje guardado correctamente"
+            )
+
+        except Exception as e:
+
+            print(
+                f"ERROR AL GUARDAR LOG: {e}"
+            )
+
+
+logger = Logger()
+
+logger.log(
+    "Sistema iniciado correctamente"
+)
+
+
+       
