@@ -1,50 +1,27 @@
-# ==========================================================
+# ============================================================
 # SISTEMA INTEGRAL DE GESTIÓN DE CLIENTES, SERVICIOS Y RESERVAS
-# Clase abstracta Servicio
-# Autor: Bladimir Alfonso España
+# Clase Servicio del sistema
+# Autor: BLADIMIR ALFONSO ESPAÑA
 #
 # Funciones principales:
-# - Representar servicios generales del sistema
-# - Definir atributos básicos de servicios
-# - Implementar herencia y abstracción
-# - Obligar a las clases hijas a definir métodos
-# - Calcular costos y describir servicios
-# ==========================================================
+# - Registro de servicios
+# - Clasificación de servicios por categoría
+# - Gestión de precios
+# - Visualización de detalles del servicio
+# ============================================================
 
-from abc import ABC, abstractmethod
-from modelos.entidad import Entidad
-
-
-class Servicio(Entidad, ABC):
+class Servicio:
 
     # Constructor de la clase Servicio
-    def __init__(self, nombre, tarifa):
-
+    # Inicializa los datos principales del servicio
+    def __init__(self, nombre, categoria, precio):
         self.nombre = nombre
-        self.tarifa = tarifa
+        self.categoria = categoria
+        self.precio = precio
 
-    # Método abstracto para calcular costos
-    @abstractmethod
-    def calcular_costo(self, horas):
-        pass
+    # Método para mostrar el detalle del servicio
+    # Retorna nombre, categoría y precio del servicio
+    def detalle(self):
+        return f"{self.nombre} - {self.categoria} - ${
 
-    # Método abstracto para mostrar descripción
-    @abstractmethod
-    def descripcion(self):
-        pass
-from abc import ABC, abstractmethod
-from modelos.entidad import Entidad
-
-class Servicio(Entidad, ABC):
-
-    def __init__(self, nombre, tarifa):
-        self.nombre = nombre
-        self.tarifa = tarifa
-
-    @abstractmethod
-    def calcular_costo(self, horas):
-        pass
-
-    @abstractmethod
-    def descripcion(self):
-        pass
+     
