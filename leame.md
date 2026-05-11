@@ -9,7 +9,6 @@
 # - Dar bienvenida al usuario
 # - Mostrar tecnologías utilizadas
 # ============================================================
-
 def mostrar_leame():
 
     # Encabezado principal del sistema
