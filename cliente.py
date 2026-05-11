@@ -9,18 +9,9 @@
 # - Visualización de información del cliente
 # - Gestión básica de clientes
 # ============================================================
+ # Constructor de la clase
+    def __init__(self, nombre):
 
-class Cliente:
-
-    # Constructor de la clase Cliente
-    # Inicializa los atributos principales del cliente
-    def __init__(self, nombre, documento, telefono):
+        # Guardar nombre del cliente
         self.nombre = nombre
-        self.documento = documento
-        self.telefono = telefono
-
-    # Método para mostrar la información del cliente
-    # Retorna nombre y documento en formato texto
-    def mostrar(self):
-        return f"{self.nombre} | CC: {self.documento}"
 
