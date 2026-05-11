@@ -10,7 +10,7 @@
 # - Visualización de detalles del servicio
 # ============================================================
 
-class Servicio:
+cclass Servicio:
 
     # Constructor de la clase
     def __init__(self, nombre):
