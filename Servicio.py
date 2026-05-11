@@ -12,16 +12,9 @@
 
 class Servicio:
 
-    # Constructor de la clase Servicio
-    # Inicializa los datos principales del servicio
-    def __init__(self, nombre, categoria, precio):
+    # Constructor de la clase
+    def __init__(self, nombre):
+
+        # Guardar nombre del servicio
         self.nombre = nombre
-        self.categoria = categoria
-        self.precio = precio
-
-    # Método para mostrar el detalle del servicio
-    # Retorna nombre, categoría y precio del servicio
-    def detalle(self):
-        return f"{self.nombre} - {self.categoria} - ${
-
      
