@@ -10,22 +10,34 @@
 # - Personalización de excepciones
 # - Control y validación del sistema
 # ==========================================================
-class ClienteError(Exception):
-    pass
+def dividir_numeros():
+
+    try:
+
+        numero1 = int(input("Ingrese el primer número: "))
+        numero2 = int(input("Ingrese el segundo número: "))
+
+        resultado = numero1 / numero2
+
+        print(f"Resultado: {resultado}")
+
+    except ValueError:
+
+        print("ERROR: Debe ingresar solo números.")
+
+    except ZeroDivisionError:
+
+        print("ERROR: No se puede dividir entre cero.")
+
+    except Exception as e:
+
+        print("ERROR DEL SISTEMA:")
+        print(e)
+
+    finally:
+
+        print("Programa finalizado.")
 
 
-class ServicioError(Exception):
-    pass
+dividir_numeros()
 
-
-class ReservaError(Exception):
-    pass
-
-class ClienteError(Exception):
-    pass
-
-class ServicioError(Exception):
-    pass
-
-class ReservaError(Exception):
-    pass
