@@ -1,21 +1,26 @@
+# ============================================================
+# SISTEMA INTEGRAL DE GESTIÓN DE CLIENTES, SERVICIOS Y RESERVAS
+# Clase Cliente del sistema
+# Autora: SANDY DEL CARMEN HERRERA HERRERA
+#
+# Funciones principales:
+# - Registro de clientes
+# - Almacenamiento de datos personales
+# - Visualización de información del cliente
+# - Gestión básica de clientes
+# ============================================================
+
 class Cliente:
 
-    def __init__(self, nombre, edad, correo):
+    # Constructor de la clase Cliente
+    # Inicializa los atributos principales del cliente
+    def __init__(self, nombre, documento, telefono):
+        self.nombre = nombre
+        self.documento = documento
+        self.telefono = telefono
 
-        if nombre == "":
-            raise ValueError("El nombre no puede estar vacío")
+    # Método para mostrar la información del cliente
+    # Retorna nombre y documento en formato texto
+    def mostrar(self):
+        return f"{self.nombre} | CC: {self.documento}"
 
-        if edad <= 0:
-            raise ValueError("Edad inválida")
-
-        if "@" not in correo:
-            raise ValueError("Correo inválido")
-
-        self.__nombre = nombre
-        self.__edad = edad
-        self.__correo = correo
-
-    def mostrar_datos(self):
-        print(f"Cliente: {self.__nombre}")
-        print(f"Edad: {self.__edad}")
-        print(f"Correo: {self.__correo}")
