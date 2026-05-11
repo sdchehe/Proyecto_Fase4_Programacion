@@ -10,31 +10,30 @@
 # - Control de eventos y procesos
 # - Apoyo al manejo de excepciones
 # ==========================================================
-from datetime import datetime
-
-
 class Registrador:
 
-    @staticmethod
-    def registrar(mensaje):
+    def registrar_cliente(self, nombre):
 
-        # Abrir el archivo en modo agregar
-        with open("logs.txt", "a", encoding="utf-8") as archivo:
+        try:
 
-            # Obtener fecha y hora actual
-            fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            if nombre == "":
+                raise ValueError(
+                    "El nombre no puede estar vacío"
+                )
 
-            # Guardar mensaje en el archivo
-            archivo.write(f"{fecha} - {mensaje}\n")
-from datetime import datetime
+            print(
+                f"Cliente {nombre} registrado correctamente"
+            )
 
-class Registrador:
+        except ValueError as e:
 
-    @staticmethod
-    def registrar(mensaje):
+            print(f"ERROR: {e}")
 
-        with open("logs.txt", "a", encoding="utf-8") as archivo:
+        except Exception as e:
 
-            fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            print(f"ERROR DEL SISTEMA: {e}")
 
-            archivo.write(f"{fecha} - {mensaje}\n")
+
+registro = Registrador()
+
+registro.registrar_cliente("Bladimir")
