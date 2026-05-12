@@ -1,43 +1,61 @@
-# ==========================================================
-# SISTEMA INTEGRAL DE GESTIÓN DE CLIENTES, SERVICIOS Y RESERVAS
-# Archivo de manejo de excepciones personalizadas
-# Autora: Maria Clara Lopera Causil
+# ============================================
+# MÓDULO DE EXCEPCIONES PERSONALIZADAS
 #
-# Funciones principales:
-# - Manejo de errores en clientes
-# - Manejo de errores en servicios
-# - Manejo de errores en reservas
-# - Personalización de excepciones
-# - Control y validación del sistema
-# ==========================================================
-def dividir_numeros():
-
-    try:
-
-        numero1 = int(input("Ingrese el primer número: "))
-        numero2 = int(input("Ingrese el segundo número: "))
-
-        resultado = numero1 / numero2
-
-        print(f"Resultado: {resultado}")
-
-    except ValueError:
-
-        print("ERROR: Debe ingresar solo números.")
-
-    except ZeroDivisionError:
-
-        print("ERROR: No se puede dividir entre cero.")
-
-    except Exception as e:
-
-        print("ERROR DEL SISTEMA:")
-        print(e)
-
-    finally:
-
-        print("Programa finalizado.")
+# Este archivo contiene las excepciones
+# utilizadas en el sistema para manejar
+# errores de forma robusta y controlada.
+# ============================================
+class ErrorSistema(Exception):
+    """Clase base para todos los errores del sistema"""
+    pass
 
 
-dividir_numeros()
+# -------------------------
+# ERRORES DE VALIDACIÓN
+# -------------------------
+class ErrorValidacion(ErrorSistema):
+    """Errores de datos inválidos"""
+    pass
+
+
+class ErrorCliente(ErrorValidacion):
+    """Errores relacionados con clientes"""
+    pass
+
+
+class ErrorServicio(ErrorValidacion):
+    """Errores relacionados con servicios"""
+    pass
+
+
+class ErrorReserva(ErrorValidacion):
+    """Errores relacionados con reservas"""
+    pass
+
+
+# -------------------------
+# ERRORES DE OPERACIÓN
+# -------------------------
+class ErrorOperacion(ErrorSistema):
+    """Errores en operaciones del sistema"""
+    pass
+
+
+class ErrorReservaDuplicada(ErrorOperacion):
+    """Reserva ya confirmada"""
+    pass
+
+
+class ErrorServicioNoDisponible(ErrorOperacion):
+    """Servicio no disponible"""
+    pass
+
+
+# -------------------------
+# FUNCIÓN PARA ENCADENAMIENTO
+# -------------------------
+def manejar_error(mensaje, error_original):
+    """Encadena excepciones para mayor detalle"""
+    raise ErrorSistema(mensaje) from error_original
+       
 
