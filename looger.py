@@ -14,35 +14,9 @@ class Logger:
 
     def log(self, mensaje):
 
-        try:
+        with open("logs/sistema.log", "a", encoding="utf-8") as archivo:
+            archivo.write(f"{mensaje}\n")
 
-            archivo = open(
-                "log.txt",
-                "a"
-            )
+        print(f"LOG: {mensaje}")
 
-            archivo.write(
-                mensaje + "\n"
-            )
-
-            archivo.close()
-
-            print(
-                "Mensaje guardado correctamente"
-            )
-
-        except Exception as e:
-
-            print(
-                f"ERROR AL GUARDAR LOG: {e}"
-            )
-
-
-logger = Logger()
-
-logger.log(
-    "Sistema iniciado correctamente"
-)
-
-
-       
+           
