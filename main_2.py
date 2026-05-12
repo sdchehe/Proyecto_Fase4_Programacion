@@ -1,6 +1,7 @@
 # =========================================================
-# SISTEMA DE GESTIÓN DE RESERVAS
-# Autor: Bladimir Alfonso Espana
+# Sistema de Gestión de Clientes y Reservas
+# Fase 4 - Componente práctico - Prácticas simuladas
+# Autor: Keimer Manuel Sanchez Gutierrez
 # =========================================================
 
 # =========================================================
